@@ -74,13 +74,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ms_mobiles.wsgi.application'
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+import dj_database_url
 
+DATABASES = {
+    'default': dj_database_url.config(
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}"
+    )
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
