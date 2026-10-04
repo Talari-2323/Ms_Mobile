@@ -12,12 +12,7 @@ urlpatterns = [
         name="mobile_detail"
     ),
 
-    path("repair/", views.repair, name="repair"),
-    path(
-        "track-repair/",
-        views.track_repair,
-        name="track_repair"
-    ),
+        
 
     path("register/", views.register, name="register"),
     path("login/", views.user_login, name="login"),
