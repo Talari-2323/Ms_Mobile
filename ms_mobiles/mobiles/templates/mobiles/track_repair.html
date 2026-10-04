@@ -193,7 +193,7 @@
 
     <div class="track-box">
 
-        <form method="POST" action="{% url 'track_repair' %}" class="track-form">
+        <form method="GET" action="{% url 'track_repair' %}" class="track-form">
          {% csrf_token %}
          <input type="text" 
           name="repair_id" 

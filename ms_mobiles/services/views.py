@@ -4,11 +4,11 @@ from django.contrib import messages
 from django.core.mail import send_mail
 
 from .models import ServiceRequest
+from mobiles.models import Repair
 
 
 def home(request):
     return render(request, "home.html")
-
 
 def service_request(request):
 
@@ -22,6 +22,15 @@ def service_request(request):
             problem=request.POST.get("problem"),
         )
 
+        Repair.objects.create(
+            repair_id=service.repair_id,
+            customer_name=service.customer_name,
+            phone_number=service.phone,
+            mobile_brand=service.brand,
+            mobile_model=service.model,
+            problem=service.problem,
+        )
+
         return render(
             request,
             "home.html",
@@ -33,26 +42,31 @@ def service_request(request):
 
     return render(request, "home.html")
 
-
 def track_repair(request):
 
     service = None
     error = None
+    repair_id = ""
 
-    if request.method == "POST":
+    if request.method == "GET":
+        repair_id = request.GET.get(
+            "repair_id", ""
+        ).strip().upper()
 
+    elif request.method == "POST":
         repair_id = request.POST.get(
             "repair_id", ""
         ).strip().upper()
 
+    if repair_id:
         try:
             service = ServiceRequest.objects.get(
                 repair_id=repair_id
             )
-
         except ServiceRequest.DoesNotExist:
-
             error = "Repair ID not found. Please check your ID."
+    elif request.method in ["GET", "POST"]:
+        error = "Please enter your Repair ID."
 
     return render(
         request,
@@ -62,8 +76,6 @@ def track_repair(request):
             "track_error": error,
         }
     )
-
-
 # LOGIN VIEW
 def user_login(request):
 

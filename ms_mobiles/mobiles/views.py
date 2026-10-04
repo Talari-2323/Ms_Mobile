@@ -39,38 +39,38 @@ def mobile_detail(request, id):
 
 def repair(request):
 
-    if request.method == 'POST':
+    if request.method == 'GET':
 
-        customer_name = request.POST.get(
+        customer_name = request.GET.get(
             'customer_name', ''
         ).strip()
 
-        phone_number = request.POST.get(
+        phone_number = request.GET.get(
             'phone_number', ''
         ).strip()
 
-        mobile_brand = request.POST.get(
+        mobile_brand = request.GET.get(
             'mobile_brand', ''
         ).strip()
 
-        mobile_model = request.POST.get(
+        mobile_model = request.GET.get(
             'mobile_model', ''
         ).strip()
 
-        imei_number = request.POST.get(
+        imei_number = request.GET.get(
             'imei_number', ''
         ).strip()
 
-        problem_type = request.POST.get(
+        problem_type = request.GET.get(
             'problem_type',
             'Other'
         )
 
-        problem = request.POST.get(
+        problem = request.GET.get(
             'problem', ''
         ).strip()
 
-        service_type = request.POST.get(
+        service_type = request.GET.get(
             'service_type',
             'Shop Visit'
         )
@@ -151,13 +151,21 @@ MS Mobiles
         'mobiles/repair.html'
     )
 
-
 def track_repair(request):
     repair = None
     searched = False
     error = None
 
-    if request.method == "POST":
+    repair_id = request.GET.get("repair_id", "").strip().upper()
+
+    if repair_id:
+        searched = True
+
+        try:
+            repair = Repair.objects.get(repair_id=repair_id)
+        except Repair.DoesNotExist:
+            error = "Repair ID not found. Please check your Repair ID."
+    elif request.method == "POST":
         repair_id = request.POST.get("repair_id", "").strip().upper()
         searched = True
 
@@ -176,28 +184,29 @@ def track_repair(request):
             "repair": repair,
             "searched": searched,
             "error": error,
-        }
+        },
     )
+
 def register(request):
 
-    if request.method == 'POST':
+    if request.method == 'GET':
 
-        username = request.POST.get(
+        username = request.GET.get(
             'username',
             ''
         ).strip()
 
-        email = request.POST.get(
+        email = request.GET.get(
             'email',
             ''
         ).strip()
 
-        password = request.POST.get(
+        password = request.GET.get(
             'password',
             ''
         )
 
-        confirm_password = request.POST.get(
+        confirm_password = request.GET.get(
             'confirm_password',
             ''
         )
@@ -262,14 +271,14 @@ def register(request):
 
 def user_login(request):
 
-    if request.method == 'POST':
+    if request.method == 'GET':
 
-        username = request.POST.get(
+        username = request.GET.get(
             'username',
             ''
         ).strip()
 
-        password = request.POST.get(
+        password = request.GET.get(
             'password',
             ''
         )
@@ -323,9 +332,9 @@ def place_order(request, id):
         id=id
     )
 
-    if request.method == 'POST':
+    if request.method == 'GET':
 
-        quantity = request.POST.get(
+        quantity = request.GET.get(
             'quantity',
             '1'
         )
