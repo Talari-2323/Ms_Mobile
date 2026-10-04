@@ -1,6 +1,7 @@
 # Python
 __pycache__/
 *.py[cod]
+*.pyo
 
 # Virtual environment
 venv/
@@ -9,12 +10,17 @@ env/
 
 # Django
 db.sqlite3
+*.sqlite3
 
 # User uploaded media
 media/
 
+# Collected static files
+staticfiles/
+
 # Environment variables
 .env
+.env.*
 
 # IDE
 .vscode/
@@ -23,3 +29,9 @@ media/
 # OS
 .DS_Store
 Thumbs.db
+
+# Project backups / temporary files
+local_backup/
+temp_project/
+temp_config/
+config/

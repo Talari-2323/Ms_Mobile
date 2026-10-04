@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+import uuid
 
 
 class Mobile(models.Model):
@@ -49,56 +50,93 @@ class Repair(models.Model):
         ('Compatible', 'Compatible'),
     ]
 
+    # Customer-facing Repair ID
+    repair_id = models.CharField(
+        max_length=20,
+        unique=True,
+        editable=False
+    )
+
     customer_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=15)
     mobile_brand = models.CharField(max_length=100)
     mobile_model = models.CharField(max_length=100)
     imei_number = models.CharField(max_length=50, blank=True)
+
     problem_type = models.CharField(
         max_length=50,
         choices=PROBLEM_CHOICES,
         default='Other'
     )
+
     problem = models.TextField()
+
     phone_photo = models.ImageField(
         upload_to='repair_photos/',
         blank=True,
         null=True
     )
+
     service_type = models.CharField(
         max_length=30,
         choices=SERVICE_TYPE_CHOICES,
         default='Shop Visit'
     )
-    parts_replaced = models.CharField(max_length=255, blank=True)
+
+    parts_replaced = models.CharField(
+        max_length=255,
+        blank=True
+    )
+
     part_quality = models.CharField(
         max_length=20,
         choices=PART_QUALITY_CHOICES,
         blank=True
     )
-    technician = models.CharField(max_length=100, blank=True)
+
+    technician = models.CharField(
+        max_length=100,
+        blank=True
+    )
+
     repair_cost = models.DecimalField(
         max_digits=10,
         decimal_places=2,
         default=0
     )
+
     status = models.CharField(
         max_length=30,
         choices=STATUS_CHOICES,
         default='Received'
     )
-    received_date = models.DateTimeField(auto_now_add=True)
+
+    received_date = models.DateTimeField(
+        auto_now_add=True
+    )
+
     expected_delivery_date = models.DateField(
         null=True,
         blank=True
     )
+
     delivered_date = models.DateField(
         null=True,
         blank=True
     )
 
+    def save(self, *args, **kwargs):
+
+        if not self.repair_id:
+            self.repair_id = (
+                "MSM-" +
+                uuid.uuid4().hex[:8].upper()
+            )
+
+        super().save(*args, **kwargs)
+
     def __str__(self):
-        return f"{self.customer_name} - {self.mobile_brand} {self.mobile_model}"
+        return f"{self.repair_id} - {self.customer_name}"
 
 
 class Order(models.Model):

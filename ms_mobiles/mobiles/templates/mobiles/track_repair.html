@@ -193,23 +193,15 @@
 
     <div class="track-box">
 
-        <form method="GET" action="{% url 'track_repair' %}" class="track-form">
-
-            <input
-                type="number"
-                name="repair_id"
-                placeholder="Enter Repair ID"
-                min="1"
-                required
-            >
-
-            <button type="submit">
-                Track Repair
-            </button>
-
-        </form>
-
-    </div>
+        <form method="POST" action="{% url 'track_repair' %}" class="track-form">
+         {% csrf_token %}
+         <input type="text" 
+          name="repair_id" 
+          placeholder="Enter Repair ID">
+          <button type="submit">Track Repair
+         </button>
+     </form>
+     </div>
 
 
     {% if error %}
@@ -412,37 +404,82 @@
         </div>
 
 
-        <div class="details">
+       <div class="details">
 
-            <h3>Repair Details</h3>
+    <h3>Repair Details</h3>
 
-            <p>
-                <strong>Repair ID:</strong>
-                #{{ repair.id }}
-            </p>
+    <p>
+        <strong>Repair ID:</strong>
+        #{{ repair.repair_id }}
+    </p>
 
-            <p>
-                <strong>Mobile:</strong>
-                {{ repair.mobile_brand }}
-                {{ repair.mobile_model }}
-            </p>
+    <p>
+        <strong>Customer:</strong>
+        {{ repair.customer_name }}
+    </p>
 
-            <p>
-                <strong>Problem:</strong>
-                {{ repair.problem_type }}
-            </p>
+    <p>
+        <strong>Mobile:</strong>
+        {{ repair.mobile_brand }}
+        {{ repair.mobile_model }}
+    </p>
 
-            <p>
-                <strong>Service Type:</strong>
-                {{ repair.service_type }}
-            </p>
+    <p>
+        <strong>Problem:</strong>
+        {{ repair.problem_type }}
+    </p>
 
-            <p>
-                <strong>Current Status:</strong>
-                {{ repair.status }}
-            </p>
+    <p>
+        <strong>Description:</strong>
+        {{ repair.problem }}
+    </p>
 
-        </div>
+    <p>
+        <strong>Service Type:</strong>
+        {{ repair.service_type }}
+    </p>
+
+    <p>
+        <strong>Current Status:</strong>
+        {{ repair.status }}
+    </p>
+
+    <p>
+        <strong>Technician:</strong>
+        {% if repair.technician %}
+            {{ repair.technician }}
+        {% else %}
+            Not assigned yet
+        {% endif %}
+    </p>
+
+    <p>
+        <strong>Repair Cost:</strong>
+        ₹{{ repair.repair_cost }}
+    </p>
+
+    <p>
+        <strong>Received Date:</strong>
+        {{ repair.received_date|date:"d M Y, h:i A" }}
+    </p>
+
+    <p>
+        <strong>Expected Delivery:</strong>
+        {% if repair.expected_delivery_date %}
+            {{ repair.expected_delivery_date|date:"d M Y" }}
+        {% else %}
+            Not updated yet
+        {% endif %}
+    </p>
+
+    {% if repair.delivered_date %}
+    <p>
+        <strong>Delivered Date:</strong>
+        {{ repair.delivered_date|date:"d M Y" }}
+    </p>
+    {% endif %}
+
+</div>
 
     </div>
 
@@ -452,3 +489,4 @@
 
 </body>
 </html>
+

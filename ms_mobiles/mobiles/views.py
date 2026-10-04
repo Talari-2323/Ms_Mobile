@@ -16,6 +16,7 @@ def home(request):
         {'mobiles': mobiles_list}
     )
 
+
 def mobiles(request):
     mobile_list = Mobile.objects.all().order_by('-id')
 
@@ -91,20 +92,19 @@ def repair(request):
         )
 
         print("========== REPAIR ID ==========")
-        print(repair.id)
+        print(repair.repair_id)
         print("================================")
 
         try:
-
             send_mail(
-                subject=f'MS Mobiles - Repair Booked #{repair.id}',
+                subject=f'MS Mobiles - Repair Booked {repair.repair_id}',
 
                 message=f"""
 Hello {customer_name},
 
 Your mobile repair has been successfully booked.
 
-Repair ID: {repair.id}
+Repair ID: {repair.repair_id}
 
 Mobile:
 {mobile_brand} {mobile_model}
@@ -142,7 +142,7 @@ MS Mobiles
             {
                 'success': True,
                 'repair': repair,
-                'repair_id': repair.id
+                'repair_id': repair.repair_id
             }
         )
 
@@ -153,58 +153,53 @@ MS Mobiles
 
 
 def track_repair(request):
-
     repair = None
     searched = False
+    error = None
 
-    if request.method == 'POST':
-
-        repair_id = request.POST.get(
-            'repair_id', ''
-        ).strip()
-
+    if request.method == "POST":
+        repair_id = request.POST.get("repair_id", "").strip().upper()
         searched = True
 
-        if repair_id.isdigit():
-
+        if repair_id:
             try:
-
-                repair = Repair.objects.get(
-                    id=int(repair_id)
-                )
-
+                repair = Repair.objects.get(repair_id=repair_id)
             except Repair.DoesNotExist:
-
-                repair = None
+                error = "Repair ID not found. Please check your Repair ID."
+        else:
+            error = "Please enter your Repair ID."
 
     return render(
         request,
-        'mobiles/track_repair.html',
+        "mobiles/track_repair.html",
         {
-            'repair': repair,
-            'searched': searched
+            "repair": repair,
+            "searched": searched,
+            "error": error,
         }
     )
-
-
 def register(request):
 
     if request.method == 'POST':
 
         username = request.POST.get(
-            'username', ''
+            'username',
+            ''
         ).strip()
 
         email = request.POST.get(
-            'email', ''
+            'email',
+            ''
         ).strip()
 
         password = request.POST.get(
-            'password', ''
+            'password',
+            ''
         )
 
         confirm_password = request.POST.get(
-            'confirm_password', ''
+            'confirm_password',
+            ''
         )
 
         if not username or not email or not password:
@@ -270,11 +265,13 @@ def user_login(request):
     if request.method == 'POST':
 
         username = request.POST.get(
-            'username', ''
+            'username',
+            ''
         ).strip()
 
         password = request.POST.get(
-            'password', ''
+            'password',
+            ''
         )
 
         user = authenticate(
@@ -334,14 +331,12 @@ def place_order(request, id):
         )
 
         try:
-
             quantity = int(quantity)
 
             if quantity < 1:
                 quantity = 1
 
         except ValueError:
-
             quantity = 1
 
         total_price = mobile.price * quantity
