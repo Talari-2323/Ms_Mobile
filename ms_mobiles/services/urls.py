@@ -9,11 +9,7 @@ urlpatterns = [
         name="service_request"
     ),
 
-    path(
-        "track-repair/",
-        views.track_repair,
-        name="track_repair"
-    ),
+   
 
     path(
         "login/",
