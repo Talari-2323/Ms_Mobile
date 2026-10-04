@@ -12,9 +12,10 @@ def home(request):
 
     return render(
         request,
-        'home.html',
+        'mobiles/home.html',
         {'mobiles': mobiles_list}
     )
+
 
 def mobiles(request):
     mobile_list = Mobile.objects.all().order_by('-id')

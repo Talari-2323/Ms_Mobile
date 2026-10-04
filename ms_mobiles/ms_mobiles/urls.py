@@ -15,6 +15,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
 
     path("", include("mobiles.urls")),
+    path("", include("services.urls")),
 
     path(
         "sitemap.xml",

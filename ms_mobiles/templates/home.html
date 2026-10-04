@@ -1,0 +1,3373 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+   <meta name="description"
+      content="MS Mobiles provides professional mobile phone repair, screen replacement, battery replacement, servicing, pickup and delivery services.">
+
+    <meta name="author"
+      content="MS Mobiles">
+
+   <meta name="robots"
+      content="index, follow">
+
+    <link rel="canonical" href="http://127.0.0.1:8000/">
+
+    <meta property="og:title"
+      content="MS Mobiles | Professional Mobile Repair Services">
+
+    <meta property="og:description"
+      content="Professional mobile repair, servicing, screen replacement, battery replacement, pickup and delivery services from MS Mobiles.">
+
+    <meta property="og:type"
+      content="website">
+
+<title>MS Mobiles | Mobile Repair & Service</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #071a3d;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .navbar {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #2d8cff;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3d9bff;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            background:
+                linear-gradient(135deg, #071a3d, #0d3673);
+            color: white;
+            padding: 80px 0 70px;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-small {
+            color: #54a7ff;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #4ca5ff;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #dce9fa;
+            max-width: 650px;
+            margin-bottom: 28px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            border: none;
+            padding: 13px 24px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #1687ff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0874e3;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid #7dbfff;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #071a3d;
+        }
+
+        .hero-phone {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 25px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .phone-icon {
+            font-size: 120px;
+            margin-bottom: 10px;
+        }
+
+        .hero-phone h3 {
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .hero-phone p {
+            font-size: 14px;
+            margin: 0 auto;
+        }
+
+
+        /* ================= FEATURES ================= */
+
+        .feature-strip {
+            margin-top: -35px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .features {
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            overflow: hidden;
+        }
+
+        .feature {
+            padding: 24px;
+            text-align: center;
+            border-right: 1px solid #e8edf4;
+        }
+
+        .feature:last-child {
+            border-right: none;
+        }
+
+        .feature-icon {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .feature h4 {
+            font-size: 15px;
+            color: #10295a;
+        }
+
+        .feature p {
+            font-size: 12px;
+            color: #718096;
+        }
+
+
+        /* ================= COMMON SECTION ================= */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading span {
+            color: #1687ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .section-heading h2 {
+            color: #071a3d;
+            font-size: 34px;
+            margin-top: 7px;
+        }
+
+        .section-heading p {
+            color: #718096;
+            max-width: 650px;
+            margin: 10px auto;
+        }
+
+
+        /* ================= SERVICES ================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 22px rgba(20,50,90,0.08);
+            border: 1px solid #edf1f7;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(20,50,90,0.14);
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eaf4ff;
+            border-radius: 12px;
+            font-size: 27px;
+            margin-bottom: 17px;
+        }
+
+        .service-card h3 {
+            color: #10295a;
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            color: #6b778c;
+            font-size: 14px;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-box {
+            background: #071a3d;
+            color: white;
+            padding: 45px;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .about-box .big-icon {
+            font-size: 90px;
+        }
+
+        .about-content h2 {
+            color: #071a3d;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .about-content p {
+            color: #667085;
+            margin-bottom: 15px;
+        }
+
+        .about-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .about-list li {
+            margin: 12px 0;
+            color: #263754;
+        }
+
+
+        /* ================= BRANDS ================= */
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+        }
+
+        .brand {
+            background: white;
+            border-radius: 12px;
+            padding: 25px 10px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            font-weight: bold;
+            color: #263754;
+        }
+
+        .brand-icon {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+
+        /* ================= WHY US ================= */
+
+        .why {
+            background: #071a3d;
+            color: white;
+        }
+
+        .why .section-heading h2 {
+            color: white;
+        }
+
+        .why .section-heading p {
+            color: #c8d7ed;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .why-card {
+            background: rgba(255,255,255,0.08);
+            padding: 28px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .why-card .icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .why-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .why-card p {
+            font-size: 13px;
+            color: #cbd8ec;
+        }
+
+
+        /* ================= PROCESS ================= */
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .process-card {
+            text-align: center;
+            background: white;
+            padding: 28px 18px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        }
+
+        .process-number {
+            width: 48px;
+            height: 48px;
+            margin: auto auto 15px;
+            border-radius: 50%;
+            background: #1687ff;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .process-card h3 {
+            color: #10295a;
+            font-size: 17px;
+        }
+
+        .process-card p {
+            color: #718096;
+            font-size: 13px;
+            margin-top: 7px;
+        }
+
+
+        /* ================= BOOK REPAIR ================= */
+
+        .booking-section {
+            background: #eef6ff;
+        }
+
+        .form-card {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #1c2e50;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d7dfeb;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #1687ff;
+            box-shadow: 0 0 0 3px rgba(22,135,255,0.1);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .required {
+            color: #e53935;
+        }
+
+        .info-note {
+            background: #edf7ff;
+            border-left: 4px solid #1687ff;
+            padding: 14px;
+            border-radius: 7px;
+            color: #42526b;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+
+        /* ================= SUCCESS ================= */
+
+        .success-box {
+            max-width: 900px;
+            margin: 25px auto 0;
+            padding: 25px;
+            border-radius: 14px;
+            background: #e9fff2;
+            border: 1px solid #a8e7c1;
+            text-align: center;
+        }
+
+        .success-box h3 {
+            color: #128144;
+            margin-bottom: 8px;
+        }
+
+        .repair-id {
+            display: inline-block;
+            background: #071a3d;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 7px;
+            margin-top: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+
+        /* ================= TRACK REPAIR ================= */
+
+        .tracking-section {
+            background: white;
+        }
+
+        .track-card {
+            max-width: 900px;
+            margin: auto;
+            background: #f7faff;
+            padding: 35px;
+            border-radius: 18px;
+            border: 1px solid #e1eaf5;
+        }
+
+        .track-form {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .track-form input {
+            flex: 1;
+            padding: 14px;
+            border: 1px solid #ccd7e5;
+            border-radius: 8px;
+            outline: none;
+            text-transform: uppercase;
+        }
+
+        .track-result {
+            background: white;
+            border-radius: 14px;
+            padding: 28px;
+            border: 1px solid #e3eaf3;
+        }
+
+        .track-title {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .track-title h3 {
+            color: #071a3d;
+        }
+
+        .status-badge {
+            background: #eaf4ff;
+            color: #0874e3;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .detail-box {
+            background: #f7faff;
+            padding: 15px;
+            border-radius: 9px;
+        }
+
+        .detail-box small {
+            color: #718096;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .detail-box strong {
+            color: #172033;
+        }
+
+        .agent-card {
+            background: #071a3d;
+            color: white;
+            padding: 25px;
+            border-radius: 13px;
+            margin-top: 20px;
+        }
+
+        .agent-card h3 {
+            color: white;
+            margin-bottom: 18px;
+        }
+
+        .agent-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .agent-detail {
+            background: rgba(255,255,255,0.08);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .agent-detail small {
+            color: #abc1df;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .agent-detail strong {
+            color: white;
+        }
+
+        .error-box {
+            background: #fff0f0;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+
+        /* ================= STATUS FLOW ================= */
+
+        .status-flow {
+            margin-top: 25px;
+        }
+
+        .status-flow h3 {
+            color: #071a3d;
+            margin-bottom: 18px;
+        }
+
+        .status-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .status-step {
+            padding: 12px;
+            background: #edf2f8;
+            border-radius: 8px;
+            font-size: 12px;
+            text-align: center;
+            color: #637083;
+        }
+
+        .status-step.active {
+            background: #1687ff;
+            color: white;
+        }
+
+
+        /* ================= COMMUNICATION ================= */
+
+        .communication-section {
+            background: #eef6ff;
+        }
+
+        .communication-card {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            border: 1px solid #e1e9f4;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 7px 25px rgba(20,50,90,0.07);
+        }
+
+        .communication-form h3 {
+            color: #071a3d;
+            margin-bottom: 18px;
+            font-size: 22px;
+        }
+
+        .message-input-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .message-input-row input {
+            flex: 1;
+            padding: 14px 16px;
+            border: 1px solid #d7dfeb;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .message-input-row input:focus {
+            border-color: #1687ff;
+            box-shadow: 0 0 0 3px rgba(22,135,255,0.1);
+        }
+
+        .message-input-row button {
+            padding: 14px 25px;
+            white-space: nowrap;
+        }
+
+        #messageSent {
+            margin-top: 10px;
+            color: #148044;
+            font-weight: bold;
+            min-height: 20px;
+        }
+
+
+        /* ================= RATING ================= */
+
+
+        .rating-section {
+            background: white;
+        }
+
+        .rating-card {
+            max-width: 650px;
+            margin: auto;
+            text-align: center;
+            background: #f7faff;
+            border-radius: 18px;
+            padding: 40px;
+            border: 1px solid #e1e9f4;
+        }
+
+        .rating-card h3 {
+            color: #071a3d;
+            margin-bottom: 8px;
+        }
+
+        .rating-card p {
+            color: #718096;
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .star {
+            font-size: 38px;
+            color: #cbd3df;
+            cursor: pointer;
+            transition: 0.2s;
+            user-select: none;
+        }
+
+        .star:hover,
+        .star.selected {
+            color: #ffb400;
+            transform: scale(1.1);
+        }
+
+        #ratingMessage {
+            font-weight: bold;
+            color: #1687ff;
+            min-height: 25px;
+        }
+
+
+        /* ================= FAQ ================= */
+
+        .faq-section {
+            background: #eef6ff;
+        }
+
+        .faq-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e0e8f2;
+        }
+
+        .faq-item summary {
+            padding: 18px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #10295a;
+            list-style: none;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            float: right;
+            color: #1687ff;
+            font-size: 20px;
+        }
+
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+
+        .faq-answer {
+            padding: 0 20px 18px;
+            color: #68768b;
+            font-size: 14px;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: #f7faff;
+            padding: 30px;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid #e3eaf4;
+        }
+
+        .contact-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            color: #071a3d;
+            margin-bottom: 6px;
+        }
+
+        .contact-card p {
+            color: #718096;
+            font-size: 14px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #071a3d;
+            color: white;
+            padding: 45px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 35px;
+            padding-bottom: 30px;
+        }
+
+        footer h3 {
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            color: #bdcbe0;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin: 7px 0;
+        }
+
+        footer a {
+            color: #bdcbe0;
+            font-size: 14px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 18px;
+            text-align: center;
+            color: #aebed4;
+            font-size: 12px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 950px) {
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid,
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .brands-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 12px 0;
+                flex-direction: column;
+            }
+
+            .nav-links {
+                overflow-x: auto;
+                width: 100%;
+                padding-bottom: 5px;
+                justify-content: flex-start;
+            }
+
+            .hero {
+                padding-top: 55px;
+            }
+
+            .hero-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 37px;
+            }
+
+            .features {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .feature:nth-child(2) {
+                border-right: none;
+            }
+
+            .services-grid,
+            .why-grid,
+            .process-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .form-grid,
+            .details-grid,
+            .agent-grid,
+            .cost-box {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .track-form {
+                flex-direction: column;
+            }
+
+            .status-steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .message {
+                max-width: 90%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-card,
+            .track-card,
+            .communication-card {
+                padding: 22px;
+            }
+
+            .message-input-row {
+                flex-direction: column;
+            }
+
+            .message-input-row button {
+                width: 100%;
+            }
+        }
+
+
+    </style>
+    <!-- ================= SEO STRUCTURED DATA ================= -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MS Mobiles",
+    "description": "Professional mobile phone repair, servicing, screen replacement, battery replacement, pickup and delivery services.",
+    "telephone": "+91 8886664441",
+    "email": "support@msmobiles.com",
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+    },
+    "url": "https://www.msmobiles.com/"
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How can I book a mobile repair?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Go to the Book Repair section, enter your customer and mobile details and submit the repair request."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I track my repair?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "After booking, you will receive a unique Repair ID. Enter that ID in the Track Repair section to check the repair status."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How is the repair cost decided?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The mobile is diagnosed first. The owner can discuss the estimated cost with the customer before the repair proceeds."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you provide pickup and delivery?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. A delivery agent or mediator can coordinate mobile pickup and delivery."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Which mobile brands do you service?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "MS Mobiles can support major brands such as Apple, Samsung, OnePlus, Vivo, Oppo, Xiaomi and other smartphones."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I communicate about repair cost?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Customers can communicate about repair problems, estimated cost, final cost and approval before proceeding."
+            }
+        }
+        ,
+{
+    "@type": "Question",
+    "name": "What mobile repair services do you provide?",
+    "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MS Mobiles provides screen replacement, battery replacement, charging repair, camera repair, speaker repair, software troubleshooting and other mobile servicing."
+    }
+},
+{
+    "@type": "Question",
+    "name": "How long does mobile repair take?",
+    "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most common mobile repairs can be completed within 2–3 hours. Major repairs or repairs requiring special parts may take 1–2 days."
+    }
+},
+{
+    "@type": "Question",
+    "name": "Do you replace mobile screens and batteries?",
+    "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. MS Mobiles provides mobile screen and battery replacement services. Availability and cost depend on the mobile model."
+    }
+},
+{
+    "@type": "Question",
+    "name": "What should I do if my phone has water damage?",
+    "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Switch off the mobile and bring it to MS Mobiles for inspection. Our team can check the device and identify the possible water-related damage."
+    }
+}
+    ]
+}
+</script>
+<!-- ================= FAQ STRUCTURED DATA / AEO ================= -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can I book a mobile repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Go to the Book Repair section, enter your customer and mobile details and submit the repair request."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I track my repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After booking, you will receive a unique Repair ID. Enter that ID in the Track Repair section to check the repair status."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the repair cost decided?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The mobile is diagnosed first. The owner can discuss the estimated cost with the customer before the repair proceeds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide pickup and delivery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A delivery agent or mediator can coordinate mobile pickup and delivery."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which mobile brands do you service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MS Mobiles can support major brands such as Apple, Samsung, OnePlus, Vivo, Oppo, Xiaomi and other smartphones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I communicate about repair cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The communication section is designed for discussing repair problems, estimated cost, final cost and customer approval."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What mobile repair services do you provide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MS Mobiles provides screen replacement, battery replacement, charging repair, camera repair, speaker repair, software troubleshooting and other mobile servicing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does mobile repair take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most common mobile repairs can be completed within 2–3 hours. Major repairs or repairs requiring special parts may take 1–2 days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you replace mobile screens and batteries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. MS Mobiles provides mobile screen and battery replacement services. Availability and cost depend on the mobile model."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do if my phone has water damage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Switch off the mobile and bring it to MS Mobiles for inspection. Our team can check the device and identify the possible water-related damage."
+      }
+    }
+  ]
+}
+</script>
+
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <div class="container navbar">
+
+        <a href="#home" class="logo">
+            🔵 MS <span>Mobiles</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li><a href="#home">Home</a></li>
+
+            <li><a href="#services">Services</a></li>
+
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#brands">Brands</a></li>
+
+            <li><a href="#why-us">Why Us</a></li>
+
+            <li><a href="#process">Process</a></li>
+
+            <li><a href="#book">Book Repair</a></li>
+
+            <li><a href="#track">Track Repair</a></li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="hero-small">
+                YOUR TRUSTED MOBILE SERVICE PARTNER
+            </div>
+
+            <h1>
+                Fast.
+                <span>Reliable.</span>
+                Professional.
+            </h1>
+
+            <p>
+                Professional mobile phone repair and servicing
+                for all major brands. From screen replacement
+                to software and hardware services, we take care
+                of your device with quality and care.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#book"
+                   class="btn btn-primary">
+                    📱 Book Repair
+                </a>
+
+                <a href="#track"
+                   class="btn btn-outline">
+                    🔍 Track Repair
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-phone">
+
+            <img
+                src="{% static 'images/mobile-store.png' %}"
+                alt="MS Mobiles Smartphones"
+                style="width:100%; max-width:420px; height:auto; display:block; margin:0 auto 20px; border-radius:16px;"
+            >
+
+            <h3>
+                Professional Mobile Care
+            </h3>
+
+            <p>
+                Genuine parts • Expert technicians •
+                Pickup & Delivery
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<div class="container feature-strip">
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                👨‍🔧
+            </div>
+
+            <h4>
+                Expert Technicians
+            </h4>
+
+            <p>
+                Skilled repair professionals
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🛠️
+            </div>
+
+            <h4>
+                Genuine Parts
+            </h4>
+
+            <p>
+                Quality replacement parts
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🚚
+            </div>
+
+            <h4>
+                Pickup & Delivery
+            </h4>
+
+            <p>
+                Convenient device collection
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ⏱️
+            </div>
+
+            <h4>
+                On-Time Service
+            </h4>
+
+            <p>
+                Transparent repair process
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>
+                WHAT WE OFFER
+            </span>
+
+            <h2>
+                Our Mobile Services
+            </h2>
+
+            <p>
+                Complete mobile phone repair and servicing
+                solutions for common hardware and software issues.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Screen Replacement
+                </h3>
+
+                <p>
+                    Professional replacement for damaged,
+                    cracked or broken screens.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🔋
+                </div>
+
+                <h3>
+                    Battery Replacement
+                </h3>
+
+                <p>
+                    Battery replacement for poor battery
+                    performance and charging issues.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🔌
+                </div>
+
+                <h3>
+                    Charging Repair
+                </h3>
+
+                <p>
+                    Solutions for charging port and
+                    charging-related problems.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🎙️
+                </div>
+
+                <h3>
+                    Speaker & Mic Repair
+                </h3>
+
+                <p>
+                    Repair for microphone, speaker and
+                    sound-related problems.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Software Service
+                </h3>
+
+                <p>
+                    Software troubleshooting and system
+                    related service.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🔧
+                </div>
+
+                <h3>
+                    Hardware Repair
+                </h3>
+
+                <p>
+                    Professional diagnosis and repair
+                    for hardware problems.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="container about-grid">
+
+
+        <div class="about-box">
+
+            <div class="big-icon">
+                📱
+            </div>
+
+            <h2>
+                MS Mobiles
+            </h2>
+
+            <p>
+                Your trusted mobile servicing partner
+            </p>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <h2>
+                About MS Mobiles
+            </h2>
+
+            <p>
+                MS Mobiles is a customer-focused mobile
+                servicing and repairing platform designed
+                to make the repair process simple and transparent.
+            </p>
+
+            <p>
+                Customers can book a repair request online,
+                receive a unique Repair ID, track their repair
+                status and communicate about repair costs.
+            </p>
+
+            <ul class="about-list">
+
+                <li>
+                    ✅ Easy online repair booking
+                </li>
+
+                <li>
+                    ✅ Unique Repair ID
+                </li>
+
+                <li>
+                    ✅ Pickup and delivery coordination
+                </li>
+
+                <li>
+                    ✅ Repair status tracking
+                </li>
+
+                <li>
+                    ✅ Transparent cost communication
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BRANDS ================= -->
+
+<section id="brands">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>
+                MOBILE BRANDS
+            </span>
+
+            <h2>
+                All Major Brands Serviced
+            </h2>
+
+            <p>
+                We provide servicing support for popular
+                smartphone brands.
+            </p>
+
+        </div>
+
+
+        <div class="brands-grid">
+
+            <div class="brand">
+                <div class="brand-icon"></div>
+                Apple
+            </div>
+
+            <div class="brand">
+                <div class="brand-icon">S</div>
+                Samsung
+            </div>
+
+            <div class="brand">
+                <div class="brand-icon">◉</div>
+                OnePlus
+            </div>
+
+            <div class="brand">
+                <div class="brand-icon">V</div>
+                Vivo
+            </div>
+
+            <div class="brand">
+                <div class="brand-icon">O</div>
+                Oppo
+            </div>
+
+            <div class="brand">
+                <div class="brand-icon">X</div>
+                Xiaomi
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY US ================= -->
+
+<section class="why" id="why-us">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>
+                WHY CHOOSE US
+            </span>
+
+            <h2>
+                Why MS Mobiles?
+            </h2>
+
+            <p>
+                We focus on reliable service, clear communication
+                and a simple customer experience.
+            </p>
+
+        </div>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <div class="icon">
+                    🔍
+                </div>
+
+                <h3>
+                    Transparent Diagnosis
+                </h3>
+
+                <p>
+                    Repair problems are identified before
+                    proceeding with the service.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="icon">
+                    💰
+                </div>
+
+                <h3>
+                    Cost Discussion
+                </h3>
+
+                <p>
+                    Customers can discuss estimated repair
+                    costs before approving the service.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="icon">
+                    🚚
+                </div>
+
+                <h3>
+                    Pickup & Delivery
+                </h3>
+
+                <p>
+                    A delivery agent coordinates mobile
+                    pickup and delivery.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Repair Tracking
+                </h3>
+
+                <p>
+                    Customers can use their Repair ID to
+                    check the current service status.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROCESS ================= -->
+
+<section id="process">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>
+                HOW IT WORKS
+            </span>
+
+            <h2>
+                Simple Repair Process
+            </h2>
+
+        </div>
+
+
+        <div class="process-grid">
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    1
+                </div>
+
+                <h3>
+                    Book Repair
+                </h3>
+
+                <p>
+                    Submit your mobile repair request online.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    2
+                </div>
+
+                <h3>
+                    Mobile Collection
+                </h3>
+
+                <p>
+                    Delivery agent collects the mobile.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    3
+                </div>
+
+                <h3>
+                    Repair & Diagnosis
+                </h3>
+
+                <p>
+                    Mobile is checked and repaired by technicians.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    4
+                </div>
+
+                <h3>
+                    Delivery
+                </h3>
+
+                <p>
+                    Repaired mobile is returned to the customer.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BOOK REPAIR ================= -->
+
+<section class="booking-section" id="book">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>
+                ONLINE SERVICE
+            </span>
+
+            <h2>
+                Book Your Mobile Repair
+            </h2>
+
+            <p>
+                Enter your details and submit your repair request.
+            </p>
+
+        </div>
+
+
+        <div class="form-card">
+
+            <div class="info-note">
+
+                💡 After submitting your request,
+                a unique <strong>Repair ID</strong> will be generated.
+                Keep this ID safe for tracking your repair.
+
+            </div>
+
+
+            <form method="POST"
+                  action="{% url 'service_request' %}">
+
+                {% csrf_token %}
+
+
+                <div class="form-grid">
+
+
+                    <!-- CUSTOMER NAME -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Customer Name
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            name="customer_name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Phone Number
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="tel"
+                            name="phone"
+                            placeholder="Enter phone number"
+                            maxlength="15"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- BRAND -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Mobile Brand
+                            <span class="required">*</span>
+                        </label>
+
+                        <select name="brand" required>
+
+                            <option value="">
+                                Select Brand
+                            </option>
+
+                            <option value="Apple">
+                                Apple
+                            </option>
+
+                            <option value="Samsung">
+                                Samsung
+                            </option>
+
+                            <option value="OnePlus">
+                                OnePlus
+                            </option>
+
+                            <option value="Vivo">
+                                Vivo
+                            </option>
+
+                            <option value="Oppo">
+                                Oppo
+                            </option>
+
+                            <option value="Xiaomi">
+                                Xiaomi
+                            </option>
+
+                            <option value="Realme">
+                                Realme
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- MODEL -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Mobile Model
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            name="model"
+                            placeholder="Example: Samsung S23"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PROBLEM TYPE -->
+
+                    <div class="form-group full">
+
+                        <label>
+                            Problem Type
+                            <span class="required">*</span>
+                        </label>
+
+                        <select name="problem_type" required>
+
+                            <option value="">
+                                Select Problem Type
+                            </option>
+
+                            <option value="Battery Problem">
+                                Battery Problem
+                            </option>
+
+                            <option value="Screen / Display Problem">
+                                Screen / Display Problem
+                            </option>
+
+                            <option value="Charging Problem">
+                                Charging Problem
+                            </option>
+
+                            <option value="Speaker / Microphone Problem">
+                                Speaker / Microphone Problem
+                            </option>
+
+                            <option value="Software / System Problem">
+                                Software / System Problem
+                            </option>
+
+                            <option value="Camera Problem">
+                                Camera Problem
+                            </option>
+
+                            <option value="Water Damage">
+                                Water Damage
+                            </option>
+
+                            <option value="Other Hardware Problem">
+                                Other Hardware Problem
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- PROBLEM -->
+
+                    <div class="form-group full">
+
+                        <label>
+                            Problem Description
+                            <span class="required">*</span>
+                        </label>
+
+                        <textarea
+                            name="problem"
+                            placeholder="Explain the problem with your mobile..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+                    🚀 Submit Repair Request
+                </button>
+
+            </form>
+
+        </div>
+
+
+        {% if success %}
+
+        <div class="success-box">
+
+            <h3>
+                ✅ Repair Request Submitted Successfully!
+            </h3>
+
+            <p>
+                Your unique Repair ID is:
+            </p>
+
+            <div class="repair-id">
+                {{ service.repair_id }}
+            </div>
+
+            <p style="margin-top:12px;">
+                Please save this ID to track your repair.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= TRACK REPAIR ================= -->
+
+<section class="tracking-section" id="track">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>
+                REPAIR TRACKING
+            </span>
+
+            <h2>
+                Track Your Repair
+            </h2>
+
+            <p>
+                Enter your Repair ID to check the current
+                repair status.
+            </p>
+
+        </div>
+
+
+        <div class="track-card">
+
+
+            <form method="POST"
+                  action="{% url 'track_repair' %}"
+                  class="track-form">
+
+                {% csrf_token %}
+
+                <input
+                    type="text"
+                    name="repair_id"
+                    placeholder="Enter Repair ID e.g. MSM-A72F91CD"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+                    🔍 Track Repair
+                </button>
+
+            </form>
+
+
+            {% if track_error %}
+
+                <div class="error-box">
+                    ❌ {{ track_error }}
+                </div>
+
+            {% endif %}
+
+
+            {% if tracked_service %}
+
+            <div class="track-result">
+
+
+                <div class="track-title">
+
+                    <h3>
+                        Repair Details
+                    </h3>
+
+                    <span class="status-badge">
+                        {{ tracked_service.status }}
+                    </span>
+
+                </div>
+
+
+                <div class="details-grid">
+
+
+                    <div class="detail-box">
+
+                        <small>
+                            Repair ID
+                        </small>
+
+                        <strong>
+                            {{ tracked_service.repair_id }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-box">
+
+                        <small>
+                            Customer
+                        </small>
+
+                        <strong>
+                            {{ tracked_service.customer_name }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-box">
+
+                        <small>
+                            Mobile
+                        </small>
+
+                        <strong>
+                            {{ tracked_service.brand }}
+                            {{ tracked_service.model }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-box">
+
+                        <small>
+                            Problem Type
+                        </small>
+
+                        <strong>
+                            {{ tracked_service.problem_type }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-box">
+
+                        <small>
+                            Problem
+                        </small>
+
+                        <strong>
+                            {{ tracked_service.problem }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-box">
+
+                        <small>
+                            Current Status
+                        </small>
+
+                        <strong>
+                            {{ tracked_service.status }}
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- DELIVERY AGENT -->
+
+                <div class="agent-card">
+
+                    <h3>
+                        🚚 Assigned Delivery Agent / Mediator
+                    </h3>
+
+
+                    <div class="agent-grid">
+
+
+                        <div class="agent-detail">
+
+                            <small>
+                                Name
+                            </small>
+
+                            <strong>
+                                {{ tracked_service.delivery_agent_name }}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="agent-detail">
+
+                            <small>
+                                Phone
+                            </small>
+
+                            <strong>
+                                {{ tracked_service.delivery_agent_phone }}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="agent-detail">
+
+                            <small>
+                                Role
+                            </small>
+
+                            <strong>
+                                Pickup & Delivery Agent
+                            </strong>
+
+                        </div>
+
+
+                        <div class="agent-detail">
+
+                            <small>
+                                Pickup Status
+                            </small>
+
+                            <strong>
+                                {{ tracked_service.pickup_status }}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="agent-detail">
+
+                            <small>
+                                Delivery Status
+                            </small>
+
+                            <strong>
+                                {{ tracked_service.delivery_status }}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="agent-detail">
+
+                            <small>
+                                Repair Status
+                            </small>
+
+                            <strong>
+                                {{ tracked_service.status }}
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- STATUS FLOW -->
+
+                <div class="status-flow">
+
+                    <h3>
+                        🔧 Repair Progress
+                    </h3>
+
+
+                    <div class="status-steps">
+
+                        <div class="status-step active">
+                            1. Request Received
+                        </div>
+
+                        <div class="status-step">
+                            2. Mobile Collected
+                        </div>
+
+                        <div class="status-step">
+                            3. Service Center
+                        </div>
+
+                        <div class="status-step">
+                            4. Diagnosis
+                        </div>
+
+                        <div class="status-step">
+                            5. Repair In Progress
+                        </div>
+
+                        <div class="status-step">
+                            6. Ready for Delivery
+                        </div>
+
+                        <div class="status-step">
+                            7. Out for Delivery
+                        </div>
+
+                        <div class="status-step">
+                            8. Delivered
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            {% endif %}
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COMMUNICATION ================= -->
+
+<section class="communication-section" id="communication">
+
+    <div class="container">
+
+        <div class="communication-card">
+
+            <div class="communication-form">
+
+                <h3>
+                    Get in Touch
+                </h3>
+
+                <div class="message-input-row">
+
+                    <input
+                        type="text"
+                        id="customerMessage"
+                        placeholder="Type your message..."
+                    >
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        onclick="sendDemoMessage()"
+                    >
+                        Send
+                    </button>
+
+                </div>
+
+                <p id="messageSent"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RATING ================= -->
+
+<section class="rating-section"
+         id="rating">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <span>
+                CUSTOMER FEEDBACK
+            </span>
+
+            <h2>
+                Rate Your Experience
+            </h2>
+
+            <p>
+                Your feedback helps us improve our service.
+            </p>
+
+        </div>
+
+
+        <div class="rating-card">
+
+            <h3>
+                ⭐ How was your repair experience?
+            </h3>
+
+            <p>
+                Click the stars to give your rating.
+            </p>
+
+
+            <div class="stars">
+
+                <span class="star"
+                      data-rating="1">
+                    ★
+                </span>
+
+                <span class="star"
+                      data-rating="2">
+                    ★
+                </span>
+
+                <span class="star"
+                      data-rating="3">
+                    ★
+                </span>
+
+                <span class="star"
+                      data-rating="4">
+                    ★
+                </span>
+
+                <span class="star"
+                      data-rating="5">
+                    ★
+                </span>
+
+            </div>
+
+
+            <div id="ratingMessage">
+                Please select a rating.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FAQ ================= -->
+
+<section class="faq-section"
+         id="faq">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <span>
+                FAQ
+            </span>
+
+            <h2>
+                Frequently Asked Questions
+            </h2>
+
+            <p>
+                Common questions about our mobile repair service.
+            </p>
+
+        </div>
+
+
+        <div class="faq-container">
+
+
+            <details class="faq-item">
+
+                <summary>
+                    How can I book a mobile repair?
+                </summary>
+
+                <div class="faq-answer">
+                    Go to the Book Repair section, enter
+                    your customer and mobile details and
+                    submit the repair request.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    How do I track my repair?
+                </summary>
+
+                <div class="faq-answer">
+                    After booking, you will receive a unique
+                    Repair ID. Enter that ID in the Track Repair
+                    section to check the repair status.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    How is the repair cost decided?
+                </summary>
+
+                <div class="faq-answer">
+                    The mobile is diagnosed first. The owner
+                    can discuss the estimated cost with the
+                    customer before the repair proceeds.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Do you provide pickup and delivery?
+                </summary>
+
+                <div class="faq-answer">
+                    Yes. A delivery agent / mediator can
+                    coordinate mobile pickup and delivery.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Which mobile brands do you service?
+                </summary>
+
+                <div class="faq-answer">
+                    MS Mobiles can support major brands such
+                    as Apple, Samsung, OnePlus, Vivo, Oppo,
+                    Xiaomi and other smartphones.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Can I communicate about repair cost?
+                </summary>
+
+                <div class="faq-answer">
+                    Yes. The communication section is designed
+                    for discussing repair problems, estimated
+                    cost, final cost and customer approval.
+                </div>
+
+            </details>
+            <!-- NEW FAQ QUESTIONS START HERE -->
+
+        <details class="faq-item">
+
+          <summary>
+                   What mobile repair services do you provide?
+          </summary>
+
+       <div class="faq-answer">
+                MS Mobiles provides screen replacement, battery replacement,
+                charging repair, camera repair, speaker repair, software
+               troubleshooting and other mobile servicing.
+       </div>
+
+</details>
+
+
+        <details class="faq-item">
+
+           <summary>
+                  How long does mobile repair take?
+            </summary>
+
+        <div class="faq-answer">
+                  Most common mobile repairs can be completed within 2–3 hours.
+                  Major repairs or repairs requiring special parts may take
+                  1–2 days.
+        </div>
+
+</details>
+
+
+        <details class="faq-item">
+
+              <summary>
+                      Do you replace mobile screens and batteries?
+             </summary>
+
+        <div class="faq-answer">
+               Yes. MS Mobiles provides mobile screen and battery replacement
+              services. Availability and cost depend on the mobile model.
+        </div>
+
+</details>
+
+
+<details class="faq-item">
+
+    <summary>
+        What should I do if my phone has water damage?
+    </summary>
+
+    <div class="faq-answer">
+        Switch off the mobile and bring it to MS Mobiles for inspection.
+        Our team can check the device and identify the possible
+        water-related damage.
+    </div>
+
+</details>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact"
+         id="contact">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <span>
+                GET IN TOUCH
+            </span>
+
+            <h2>
+                Contact MS Mobiles
+            </h2>
+
+            <p>
+                Have questions about mobile servicing?
+                Contact us for assistance.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📞
+                </div>
+
+                <h3>
+                    Phone
+                </h3>
+
+                <p>
+                    +91 8886664441
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📧
+                </div>
+
+                <h3>
+                    Email
+                </h3>
+
+                <p>
+                    support@msmobiles.com
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <h3>
+                    Location
+                </h3>
+
+                <p>
+                    India
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <h3>
+                    🔵 MS Mobiles
+                </h3>
+
+                <p>
+                    Professional mobile servicing and repair
+                    platform designed to provide customers
+                    with reliable service and transparent
+                    communication.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#home">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#book">
+                            Book Repair
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#track">
+                            Track Repair
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Services
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#services">
+                            Screen Replacement
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            Battery Replacement
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            Charging Repair
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            Software Service
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 MS Mobiles.
+            All Rights Reserved.
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+    /* ================= RATING ================= */
+
+    const stars =
+        document.querySelectorAll(".star");
+
+    const ratingMessage =
+        document.getElementById("ratingMessage");
+
+
+    stars.forEach(function(star) {
+
+        star.addEventListener("click", function() {
+
+            const rating =
+                parseInt(this.dataset.rating);
+
+
+            stars.forEach(function(item) {
+
+                const itemRating =
+                    parseInt(item.dataset.rating);
+
+                if (itemRating <= rating) {
+
+                    item.classList.add("selected");
+
+                } else {
+
+                    item.classList.remove("selected");
+
+                }
+
+            });
+
+
+            ratingMessage.textContent =
+                "Thank you! You selected " +
+                rating +
+                " out of 5 stars ⭐";
+
+        });
+
+    });
+
+
+    /* ================= CUSTOMER MESSAGE ================= */
+
+    function sendDemoMessage() {
+
+        const message = document.getElementById("customerMessage");
+        const output = document.getElementById("messageSent");
+        const text = message.value.trim().toLowerCase();
+
+        if (text === "") {
+            output.style.color = "#c62828";
+            output.textContent = "Please enter a message first.";
+            return;
+        }
+
+        let reply = "";
+
+        /* ================= PRICE / DISCOUNT ================= */
+        if (
+            text.includes("price") ||
+            text.includes("cost") ||
+            text.includes("how much") ||
+            text.includes("rate") ||
+            text.includes("amount") ||
+            text.includes("charges") ||
+            text.includes("charge") ||
+            text.includes("reduce") ||
+            text.includes("discount") ||
+            text.includes("less") ||
+            text.includes("lower") ||
+            text.includes("negotiate") ||
+            text.includes("cheaper") ||
+            text.includes("decrease")
+        ) {
+            if (
+                text.includes("reduce") ||
+                text.includes("discount") ||
+                text.includes("less") ||
+                text.includes("lower") ||
+                text.includes("negotiate") ||
+                text.includes("cheaper") ||
+                text.includes("decrease")
+            ) {
+                reply = "👨‍💼 MS Mobiles Owner: We always try to provide reasonable prices. A discount may be possible depending on the mobile model, repair type and required parts. Please share your mobile model.";
+            } else {
+                reply = "👨‍💼 MS Mobiles Owner: The repair cost depends on your mobile model and the problem. Please share your exact mobile model and issue for the estimated price.";
+            }
+        }
+
+        /* ================= REPAIR TIME ================= */
+        else if (
+            text.includes("time") ||
+            text.includes("how long") ||
+            text.includes("hours") ||
+            text.includes("days") ||
+            text.includes("day") ||
+            text.includes("when") ||
+            text.includes("duration") ||
+            text.includes("take") ||
+            text.includes("how many days") ||
+            text.includes("how much time")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: Most common mobile repairs can be completed within 2–3 hours. For major repairs or if a part needs to be ordered, it may take 1–2 days.";
+        }
+
+        /* ================= SCREEN / DISPLAY ================= */
+        else if (
+            text.includes("screen") ||
+            text.includes("display") ||
+            text.includes("glass") ||
+            text.includes("touch")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: Yes, we provide screen, display, glass and touch replacement services. Please share your mobile model for availability and price.";
+        }
+
+        /* ================= BATTERY ================= */
+        else if (
+            text.includes("battery") ||
+            text.includes("battery drain") ||
+            text.includes("battery backup") ||
+            text.includes("backup")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: Yes, battery replacement is available. The price depends on your mobile model. We can also check battery-drain and backup problems.";
+        }
+
+        /* ================= CHARGING ================= */
+        else if (
+            text.includes("charging") ||
+            text.includes("charger") ||
+            text.includes("charging port") ||
+            text.includes("charge port") ||
+            text.includes("not charging") ||
+            text.includes("charging problem")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: We can check charging problems, charging ports and related issues. Please bring the mobile for inspection. After checking, we will provide the repair cost and estimated time.";
+        }
+
+        /* ================= POWER / DEAD PHONE ================= */
+        else if (
+            text.includes("not turning on") ||
+            text.includes("not switching on") ||
+            text.includes("not opening") ||
+            text.includes("dead phone") ||
+            text.includes("phone is dead") ||
+            text.includes("power problem")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: We can inspect phones that are not turning on or have power-related problems. Please share your mobile model and bring the device for diagnosis.";
+        }
+
+        /* ================= HEATING ================= */
+        else if (
+            text.includes("heating") ||
+            text.includes("overheating") ||
+            text.includes("hot") ||
+            text.includes("heat")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: Phone heating can happen because of the battery, software or hardware. Please bring your mobile for inspection so we can identify the exact issue.";
+        }
+
+        /* ================= WATER DAMAGE ================= */
+        else if (
+            text.includes("water") ||
+            text.includes("water damage") ||
+            text.includes("liquid")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: Yes, we can inspect mobiles affected by water or liquid damage. Please switch off the phone and bring it to our service center for inspection.";
+        }
+
+        /* ================= CAMERA ================= */
+        else if (
+            text.includes("camera") ||
+            text.includes("photo")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: We provide camera-related inspection and repair services. Please share your mobile model and describe the camera problem.";
+        }
+
+        /* ================= SPEAKER / AUDIO ================= */
+        else if (
+            text.includes("speaker") ||
+            text.includes("sound") ||
+            text.includes("audio")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: Yes, we can check speaker and audio problems. Please share your mobile model and describe the issue.";
+        }
+
+        /* ================= MICROPHONE ================= */
+        else if (
+            text.includes("microphone") ||
+            text.includes("mic") ||
+            text.includes("voice")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: We can inspect microphone and voice-related problems. Please share your mobile model and explain the issue.";
+        }
+
+        /* ================= SOFTWARE ================= */
+        else if (
+            text.includes("software") ||
+            text.includes("update") ||
+            text.includes("hang") ||
+            text.includes("hanging") ||
+            text.includes("slow") ||
+            text.includes("lag")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: Yes, we provide software troubleshooting and performance checks. Please share your mobile model and describe the problem.";
+        }
+
+        /* ================= DATA ================= */
+        else if (
+            text.includes("data recovery") ||
+            text.includes("recover data") ||
+            text.includes("data") ||
+            text.includes("recover")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: We can inspect your device for data-related issues and recovery possibilities. Please bring the mobile for a proper diagnosis.";
+        }
+
+        /* ================= PICKUP / DELIVERY ================= */
+        else if (
+            text.includes("pickup") ||
+            text.includes("pick up") ||
+            text.includes("delivery") ||
+            text.includes("deliver") ||
+            text.includes("home service")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: Yes, pickup and delivery service is available. Please share your location and mobile details.";
+        }
+
+        /* ================= LOCATION ================= */
+        else if (
+            text.includes("location") ||
+            text.includes("address") ||
+            text.includes("where are you") ||
+            text.includes("where is your shop") ||
+            text.includes("shop")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: MS Mobiles provides mobile sales and repair services. Please check our Contact section for the shop location and contact details.";
+        }
+
+        /* ================= CONTACT ================= */
+        else if (
+            text.includes("contact") ||
+            text.includes("phone number") ||
+            text.includes("mobile number") ||
+            text.includes("call")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: You can contact MS Mobiles through the contact details provided on our website. We will be happy to help you with your mobile-related issue.";
+        }
+
+        /* ================= REPAIR / SERVICE ================= */
+        else if (
+            text.includes("repair") ||
+            text.includes("fix") ||
+            text.includes("service") ||
+            text.includes("can you repair")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: Yes, we provide mobile repair and maintenance services. Please share your mobile model and the problem you are facing.";
+        }
+
+        /* ================= GREETING ================= */
+        else if (
+            text.includes("hello") ||
+            text.includes("hi") ||
+            text.includes("hey") ||
+            text.includes("good morning") ||
+            text.includes("good afternoon") ||
+            text.includes("good evening")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: Hello! Welcome to MS Mobiles. How can we help you with your mobile today?";
+        }
+
+        /* ================= THANK YOU ================= */
+        else if (
+            text.includes("thank you") ||
+            text.includes("thanks")
+        ) {
+            reply = "👨‍💼 MS Mobiles Owner: You're welcome! Thank you for contacting MS Mobiles.";
+        }
+
+        /* ================= GENERAL ================= */
+        else {
+            reply = "👨‍💼 MS Mobiles Owner: Thank you for contacting MS Mobiles. Please share your mobile model and explain your problem. We will help you with the repair details, estimated time and cost.";
+        }
+
+        output.style.color = "#148044";
+        output.textContent = reply;
+        message.value = "";
+    }
+
+</script>
+
+
+</body>
+</html>
