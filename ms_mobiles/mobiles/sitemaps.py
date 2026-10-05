@@ -14,9 +14,6 @@ class StaticViewSitemap(Sitemap):
             "mobiles",
             "repair",
             "track_repair",
-            "register",
-            "login",
-            "cart",
         ]
 
     def location(self, item):
