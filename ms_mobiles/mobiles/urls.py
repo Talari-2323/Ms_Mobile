@@ -37,4 +37,9 @@ urlpatterns = [
         views.robots_txt,
         name="robots_txt"
     ),
+    path(
+    "google58b12c963022b882.html",
+    views.google_verification,
+    name="google_verification",
+),
 ]
