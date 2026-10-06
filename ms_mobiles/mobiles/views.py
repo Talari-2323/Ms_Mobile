@@ -378,7 +378,10 @@ def robots_txt(request):
         'robots.txt',
         content_type='text/plain'
     )
-    def google_verification(request):
+
+
+def google_verification(request):
+
     return HttpResponse(
         "google-site-verification: google58b12c963022b882.html",
         content_type="text/plain"
