@@ -40,38 +40,38 @@ def mobile_detail(request, id):
 
 def repair(request):
 
-    if request.method == 'GET':
+    if request.method == 'POST':
 
-        customer_name = request.GET.get(
+        customer_name = request.POST.get(
             'customer_name', ''
         ).strip()
 
-        phone_number = request.GET.get(
+        phone_number = request.POST.get(
             'phone_number', ''
         ).strip()
 
-        mobile_brand = request.GET.get(
+        mobile_brand = request.POST.get(
             'mobile_brand', ''
         ).strip()
 
-        mobile_model = request.GET.get(
+        mobile_model = request.POST.get(
             'mobile_model', ''
         ).strip()
 
-        imei_number = request.GET.get(
+        imei_number = request.POST.get(
             'imei_number', ''
         ).strip()
 
-        problem_type = request.GET.get(
+        problem_type = request.POST.get(
             'problem_type',
             'Other'
         )
 
-        problem = request.GET.get(
+        problem = request.POST.get(
             'problem', ''
         ).strip()
 
-        service_type = request.GET.get(
+        service_type = request.POST.get(
             'service_type',
             'Shop Visit'
         )
